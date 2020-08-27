@@ -1,25 +1,25 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-    name: foo
-    namespace: default
-    annotations:
-        fluxcd.io/automated: "false"
+  name: foo
+  namespace: default
+  annotations:
+    fluxcd.io/automated: "false"
 spec:
-    releaseName: hub
-    helmVersion: v3
-    chart:
-        git: github.com/jrockway/github-api-test
-        path: charts/foo
-    rollback:
-        enable: true
-        force: true
-    values:
-        a:
-            image:
-                repository: example.com/foo
-                tag: abcedf
-        b:
-            image:
-                repository: example.com/foo
-                tag: abcdef
+  releaseName: hub
+  helmVersion: v3
+  chart:
+    git: github.com/jrockway/github-api-test
+    path: charts/foo
+  rollback:
+    enable: true
+    force: true
+  values:
+    a:
+      image:
+        repository: example.com/foo
+        tag: 123456
+    b:
+      image:
+        repository: example.com/foo
+        tag: 123456
