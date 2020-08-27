@@ -18,8 +18,8 @@ spec:
     a:
       image:
         repository: example.com/foo
-        tag: 123456
+        tag: 54321
     b:
       image:
         repository: example.com/foo
-        tag: 123456
+        tag: 54321
