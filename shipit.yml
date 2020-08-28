@@ -7,7 +7,8 @@ dependencies:
 deploy:
     override:
         - env
-        - ./version-bump --owner=$GITHUB_REPO_OWNER --repo=$GITHUB_REPO_NAME --branch=$BRANCH
-          --installation-id=11506385 --file=release.hr.yaml --location="spec.values.a.image.tag"
-          --location="spec.values.b.image.tag" --replacement=$SHA --author-name=$SHIPIT_USER
-          --author-email=$GIT_COMMITTER_EMAIL --message="Automated commit by shipit: ${SHIPIT_LINK}"
+        - >-
+            ./version-bump --owner=$GITHUB_REPO_OWNER --repo=$GITHUB_REPO_NAME --branch=$BRANCH
+            --installation-id=11506385 --file=release.hr.yaml --location="spec.values.a.image.tag"
+            --location="spec.values.b.image.tag" --replacement=$SHA --author-name=$SHIPIT_USER
+            --author-email=$GIT_COMMITTER_EMAIL --message="Automated commit by shipit: $SHIPIT_LINK"
