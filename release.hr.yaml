@@ -18,8 +18,8 @@ spec:
     a:
       image:
         repository: example.com/foo
-        tag: test123
+        tag: 48aadb7689789c242edf9ed412867e3f886bc20c
     b:
       image:
         repository: example.com/foo
-        tag: test123
+        tag: 48aadb7689789c242edf9ed412867e3f886bc20c
