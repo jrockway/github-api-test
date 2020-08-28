@@ -6,8 +6,9 @@ dependencies:
         - chmod a+x version-bump
 deploy:
     override:
-        - ./version-bump --token=XXX --owner=$GITHUB_REPO_OWNER --repo=$GITHUB_REPO_NAME
-          --branch=$BRANCH --file=release.hr.yaml  --location="spec.values.a.image.tag"
+        - ./version-bump --token=$JROCKWAY_GITHUB_TOKEN --owner=$GITHUB_REPO_OWNER
+          --repo=$GITHUB_REPO_NAME --branch=$BRANCH
+          --file=release.hr.yaml  --location="spec.values.a.image.tag"
           --location="spec.values.b.image.tag" --replacement=$SHA --author-username=jrockway
           --message="Automated commit by shipit"
 review:
