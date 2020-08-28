@@ -1,16 +1,12 @@
 dependencies:
     override:
         - wget
-          https://github.com/pachyderm/version-bump/releases/download/v0.0.1/version-bump-amd64-v0.0.1
-        - mv version-bump-amd64-v0.0.1 version-bump
+          https://github.com/pachyderm/version-bump/releases/download/v0.0.2/version-bump-amd64-v0.0.2
+        - mv version-bump-amd64-v0.0.2 version-bump
         - chmod a+x version-bump
 deploy:
     override:
-        - ./version-bump --token=$JROCKWAY_GITHUB_TOKEN --owner=$GITHUB_REPO_OWNER
-          --repo=$GITHUB_REPO_NAME --branch=$BRANCH
-          --file=release.hr.yaml  --location="spec.values.a.image.tag"
+        - ./version-bump --owner=$GITHUB_REPO_OWNER --repo=$GITHUB_REPO_NAME --branch=$BRANCH
+          --installation-id=11506385 --file=release.hr.yaml  --location="spec.values.a.image.tag"
           --location="spec.values.b.image.tag" --replacement=$SHA --author-username=jrockway
           --message="Automated commit by shipit"
-review:
-    checklist:
-        - Foo
